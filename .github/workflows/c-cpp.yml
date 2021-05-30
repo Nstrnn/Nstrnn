@@ -1,0 +1,181 @@
+#include<stdio.h>
+#include<math.h>
+#include<time.h>
+#include<stdlib.h>
+int production();
+int money,check,score,pb,n,s,b;
+float rb;
+int main()
+{
+int g,d,an,p,ct=0,check,score=0,answer,guess,nday;
+float benefit,rb=1,T,bd,tpb=0;
+/* bd : benefit daily &  tpb : total personal benefit &  g : goal & n : number of days to work & d : day & nc : number of customers & an : accidental number(of customers) & p : production & b : book
+pb :paint brush  &  n : notebook & s : scissors & T : total(payment,daily) & ct : copy of total(payment daily) & rb : rate of benefit*/
+printf("hello dear ! welcome in the challenge of selling and gaming by socializing, using math and an economical brain for the \nfuture :)\n\n");
+printf("*in this challenge you have to buy some notebooks,paint brushes,books and some scissors and sell them to customers\n\n");
+printf("**your firm payment will be 50000 toman daily & you can reach 1 percent of the profit for the first day !!\n\n");
+printf("***pay attention for each extra day after the last day you can reach double percent of the benefit you got for the \nprevious day on one condition :the total amount of the products you sell daily mustn\'t be less than the last day,\notherwise you have to take the same benefit of last day!\n\n");
+printf("****then you will enter your goal (? toman) you want to reach during the challenge for yourself and you will predict \nhow many days you need (at least)to work to make that money for yourself so you have to take some risks too :) \nso i suggest you to choose more days to win :-)\n\n");
+printf("*****you will have 3 to 10 customers daily by chance and because you are so young they all want to make a joke and ask \nyou some math problems and you\'ll get some score if you answer correct, \nbut take that serious because you will loose one score for having not that product!so let\'s go !:)\n\n");
+printf("******at the beginning you will have 1000000 toman to buy your products so when you are entering the number of each one pay attention the prices won\'t be over 1000000 together !!\n\n");
+printf("*******for each positive or negative score(based on your answers during the challenge) 50000 toman will be increased or decreased to your total personal benefit at the end!!\n");
+printf("let\'s start !enter the number of each product you want to buy to sell during the challenge,, so enter smartly in order:\n((b)books=50000 t,(pb)paint brushes=40000 t, (n)notebooks=20000 t, (s)scissors=10000 t )\n");
+scanf("%d %d %d %d",&b,&pb,&n,&s);
+check=b*50000+pb*40000+n*20000+s*10000;
+while(check>1000000){
+printf("pay more attention to the point ****** and enter the number of each product again!\n");
+scanf("%d %d %d %d",&b,&pb,&n,&s);
+check=b*50000+pb*40000+n*20000+s*10000;score--;
+}
+printf("how much money is your goal to make at the end for yourself? & how many days do you predict you have to work :)\n");
+scanf("%d%d",&g,&nday);
+while(g>500000||nday>10||n<=0||g<=50000){
+printf("you have to make a goal  (50000,500000] toman and 10 days at maximum! try it again!!\n");
+scanf("%d%d",&g,&nday);
+}
+printf("\nso my goal is %d toman & i want to work %d for days in the challenge!!\n",g,nday);
+char str1[]={"\'hi!what a great day..i need something for my homework by the way 123+435=?.. :) \'\n"};
+char str2[]={"\'hello!what a great store..i want some piece of equipment anyway 948-367=?.. :) \'\n"};
+char str3[]={"\'well,i need something to buy anyway 11*11=?.. :) \'\n"};
+char str4[]={"\'there is something i need for my kid, let me check what was that while you\'re answering 16*16 ?.. :) \'\n"};
+char str5[]={"\'good morning, i want something to buy by the way answer this young body : 45*3? :) \'\n"};
+char str6[]={"\'hi young body! good job! i have to buy something from you however answer this : 2775/25 ? :) \'\n"};
+char str7[]={"\'good evening dear younker,i need something with this mark! well you know what is the result of 625/25 ? :) \'\n"};
+char str8[]={"\'hello!good to see you! anyway answer me what is : 4876-548 ? :) \'\n"};
+char str9[]={"\'hey!! you know how many times a day both of the clock\'s pointers will be overlap with each other ? :)\'\n"};
+char str10[]={"\'good job body,please help me with something...by the way what is the answer of 3 to the power of 5 ? :) \'\n"};
+rb=1;
+for(int d=1;d<=nday;d++){
+printf("-------------------------------------------------------------------------------------------\n");
+printf("good morning dear! ** day %d **\n",d);
+int an=rand()%(10-3+1)+3;
+register int T=0;
+for(int i=1;i<=an;i++){
+printf("--------------------\ncustomer %d arriving...\n",i);
+srand(time(0));
+int c=rand()%(10-1+1)+1;
+if(c==1){printf("%s",str1);scanf("%d",&answer);if(answer==558){score++;printf("\n    \'exactly right!!\'\n");printf("cash : %d\n",production());;printf("Total payment daily till now:%d\n",(T+=money));printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);}else{printf("\n!!!wrong!you lost the customer!pay more attention next time!\n");score--;}}
+if(c==2){printf("%s",str2);scanf("%d",&answer);if(answer==581){score++;printf("\n    \'exactly right!!\'\n");printf("cash : %d\n",production());printf("Total payment daily till now:%d\n",T+=money);printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);}else{printf("\n!!!wrong!you lost the customer!pay more attention next time!\n");score--;}}
+if(c==3){printf("%s",str3);scanf("%d",&answer);if(answer==121){score++;printf("\n    \'exactly right!!\'\n");printf("cash : %d\n",production());printf("Total payment daily till now:%d\n",T+=money);printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);}else{printf("\n!!!wrong!you lost the customer!pay more attention next time!\n");score--;}}
+if(c==4){printf("%s",str4);scanf("%d",&answer);if(answer==256){score++;printf("\n    \'exactly right!!\'\n");printf("cash : %d\n",production());printf("Total payment daily till now:%d\n",T+=money);printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);}else{printf("\n!!!wrong!you lost the customer!pay more attention next time!\n");score--;}}
+if(c==5){printf("%s",str5);scanf("%d",&answer);if(answer==135){score++;printf("\n    \'exactly right!!\'\n");printf("cash : %d\n",production());printf("Total payment daily till now:%d\n",T+=money);printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);}else{printf("\n!!!wrong!you lost the customer!pay more attention next time!\n");score--;}}
+if(c==6){printf("%s",str6);scanf("%d",&answer);if(answer==111){score++;printf("\n    \'exactly right!!\'\n");printf("cash : %d\n",production());printf("Total payment daily till now:%d\n",T+=money);printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);}else{printf("\n!!!wrong!you lost the customer!pay more attention next time!\n");score--;}}
+if(c==7){printf("%s",str7);scanf("%d",&answer);if(answer==25){score++;printf("\n    \'exactly right!!\'\n");printf("cash : %d\n",production());printf("Total payment daily till now:%d\n",T+=money);printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);}else{printf("\n!!!wrong!you lost the customer!pay more attention next time!\n");score--;}}
+if(c==8){printf("%s",str8);scanf("%d",&answer);if(answer==4328){score++;printf("\n    \'exactly right!!\'\n");printf("cash : %d\n",production());printf("Total payment daily till now:%d\n",T+=money);printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);}else{printf("\n!!!wrong!you lost the customer!pay more attention next time!\n");score--;}}
+if(c==9){printf("%s",str9);scanf("%d",&answer);if(answer==22){score++;printf("\n    \'exactly right!!\'\n");printf("cash : %d\n",production());printf("Total payment daily till now:%d\n",T+=money);printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);}else{printf("\n!!!wrong!you lost the customer!pay more attention next time!\n");score--;}}
+if(c==10){printf("%s",str10);scanf("%d",&answer);if(answer==243){score++;printf("\n    \'exactly right!!\'\n");printf("cash : %d\n",production());printf("Total payment daily till now:%d\n",T+=money);printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);}else{printf("\n!!!wrong!you lost the customer!pay more attention next time!\n");score--;}}
+}
+printf("TOTAL PATMENT IN DAY: %d\n",T);
+int a,b;
+tpb+=50000;
+printf("guess you will get the %f percent(enter 1) benefit or %f(enter 0) percent ? and get some score !!\n",(rb),(rb/2));
+scanf("%d",&guess);
+while(guess!=0&&guess!=1){
+printf("pay attention to the previous question and enter 0 or 1 again!!!");
+scanf("%d",&guess);}
+if(T>=ct){
+      if(guess==1){score++;printf("your guess was right !!\n");}
+      else{printf("guess wrong !:(\n");}
+printf("today you made %d toman,you will got %f percent of that...so how much toman has to be added to your wallet?\n",T,(rb));scanf("%f",&benefit);
+if(benefit!=(T*rb/100)){
+      printf("\nwrong!\n");
+      score--;     }
+if(benefit!=(T*rb/100)){
+printf("\nguess wright!!");score++;}
+bd=T*rb/100;
+tpb+=bd;
+printf("\n\'benefit you got today : %f  /  total personal benefit till now : %f / \nscore of answers for each correct-> +1 ,each incorrect-> -1 : %d\'\n",bd,tpb,score);
+         }
+else{
+       if(guess==0){score++;printf("your guess was right !!\n");}
+       else{printf("guess wrong !:(\n");score--;}
+printf("today you made %d tomans,you will got %f percent of that..so how much toman has to be added to your wallet?\n ",T,(rb/2));scanf("%f",&benefit);
+if(benefit!=(T*(rb/200))){
+       printf("\nwrong!\n");
+       score--;          }
+printf("\nguess wright !!");
+bd=T*(rb/200);
+tpb+=bd;score++;
+printf("\n\'benefit you got today : %f  /  total personal benefit till now : %f /nscore of answers for each correct-> +1 ,each incorrect-> -1 : %d\'\n",bd,tpb,score);
+    }
+ct=T;
+tpb+=(score*10000);
+if(tpb>=g){
+printf("\ncongratulation!you reached your goal to make at least %d toman in at maximum %d days!!",g,d);
+return 0;
+           }
+rb*=2;
+}
+printf("\nsorry you lose!you should predict your days more logically! try it again in next challenge!");
+}
+
+
+int production()
+{
+int dcheck;
+int arr[]={b,pb,n,s};
+srand(time(0));
+int p=rand()%(3-0+1)+0;
+if(p==0){
+printf("the customer decided to buy a book..\n");
+printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);
+if(b>0){b-=1;money=50000;return money;}
+while(b==0){printf("no book left in the store!your customer left!!:(");score--;
+printf("enter the number of each product you want to buy to sell,,\nbooks=50000 t\n");
+scanf("%d",&b);
+dcheck=check+(b*50000);
+while(dcheck>1000000){
+printf("pay more attention to the point ****** and enter the number of each product again!\n");
+scanf("%d",&b);
+dcheck=check+(b*50000);score--;}
+break;}
+return money;
+}
+if(p==1){
+printf("the customer decided to buy a paint brush..\n");
+printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);
+if(pb>0){pb-=1;money=40000;return money;}
+while(pb==0){printf("no paint brush left in the store!your customer left!!:(");score--;
+printf("enter the number of each product you want to buy to sell,,\npaint brushes=40000 t\n");
+scanf("%d",&pb);
+dcheck=check+(pb*40000);
+while(dcheck>1000000){
+printf("pay more attention to the point ****** and enter the number of each product again!\n");
+scanf("%d",&pb);
+dcheck=check+(pb*40000);score--;}
+break;}
+return money;
+}
+if(p==2){
+printf("the customer decided to buy a notebook..\n");
+printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);
+if(n>0){n-=1;money=20000;return money;}
+while(n==0){printf("no notebook left in the store!your customer left!!:(");score--;
+printf("enter the number of each product you want to buy to sell,,\nnotebooks=20000 t\n");
+scanf("%d",&n);
+dcheck=check+(n*20000);
+while(dcheck>1000000){
+printf("pay more attention to the point ****** and enter the number of each product again!\n");
+scanf("%d",&n);
+dcheck=check+(n*20000);score--;}
+break;}
+return money;
+}
+else{
+printf("the customer decided to buy some piece of stationary..\n");
+printf("b:%d  pb:%d  n:%d  s:%d \n",b,pb,n,s);
+if(s>0){s-=1;money=10000;return money;}
+while(s==0){printf("no stationary left in the store!your customer left!!:(");score--;
+printf("enter the number of each product you want to buy to sell,, \nscissors=10000 t \n");
+scanf("%d",&s);
+dcheck=check+(s*10000);
+while(dcheck>1000000){
+printf("pay more attention to the point ****** and enter the number of each product again!\n");
+scanf("%d",&s);
+dcheck=check+(s*10000);score--;}
+break;}
+return money;
+}
+}
+
+
